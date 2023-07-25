@@ -1,1 +1,25 @@
+server:
+  port: 8686
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/contract_dkp
+    username: postgres
+    password: admin
+  flyway:
+    url: jdbc:postgresql://localhost:5432/contract_dkp
+    user: postgres
+    password: admin
+    locations: classpath:db/migration
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+logging:
+  level:
+    ru.onlinecontract.online_contract: debug
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+    file: "%d %p %c{1.} [%t] %m%n"
+  file:
+    name: dkp.log
 
